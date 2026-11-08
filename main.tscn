@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://dpwrxxjbyoma4"]
+
+[ext_resource type="Script" uid="uid://crk5iqxbvlmqm" path="res://camera_look.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b5todga76sdbv" path="res://ashtray.glb" id="1_kek77"]
+[ext_resource type="PackedScene" uid="uid://f0mu08b0whjl" path="res://poker_table.glb" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://lcmgsif4vc20" path="res://poker_table.gd" id="2_lquwl"]
+[ext_resource type="Shader" uid="uid://b2y5h2r0iuwjt" path="res://overlay.gdshader" id="3_vivmo"]
+[ext_resource type="PackedScene" uid="uid://bit461axjn1fy" path="res://lamp.glb" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://drr184jfdrqqd" path="res://poker_game.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://d0ua0r548nn1w" path="res://lamp_flicker.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://b358kr6msm8w8" path="res://title_screen.gd" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://brr3ubeuvn3lc" path="res://best_poker_table.fbx" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://ccxaepq0vpgtp" path="res://pokerchips2.glb" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://c8g3kqdnh1v3w" path="res://popkercipsa3.glb" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://b0dv36mtn5aon" path="res://whisky.glb" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://ooa46eesaihn" path="res://film_grain.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://bt1vri88p630v" path="res://tabletable.glb" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dgj5ytfaequ5o" path="res://cigarette_king_size_psx_style.glb" id="16_2cqfq"]
+[ext_resource type="Script" uid="uid://c4spbqsrgirxs" path="res://score_sheet.gd" id="17_yaehf"]
+
+[sub_resource type="Environment" id="Environment_pojl6"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+ambient_light_energy = 0.1
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1osx4"]
+size = Vector3(30, 0.1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w6t5"]
+albedo_color = Color(0.7143875, 0.89188117, 0.7293449, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8w6t5"]
+material = SubResource("StandardMaterial3D_8w6t5")
+size = Vector3(30, 0.1, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
+render_priority = 0
+shader = ExtResource("3_vivmo")
+shader_parameter/pixel_size = 2.0
+shader_parameter/levels = 55.0
+shader_parameter/gamma = Vector2(0.99, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8w6t5"]
+material = SubResource("ShaderMaterial_074og")
+flip_faces = true
+size = Vector2(3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pojl6"]
+size = Vector3(1.8167969, 0.1, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1osx4"]
+size = Vector3(1.7611755, 0.1, 1.4)
+
+[sub_resource type="Animation" id="Animation_yaehf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4474731, 0.83282775, -0.54653066)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cig:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "cig"
+length = 4.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96, 2, 2.72, 3.51, 3.55, 4.17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.4474731, 0.8360472, -0.5052375), Vector3(0.4474731, 0.8318578, -0.5052375), Vector3(0.4474731, 0.83639616, -0.5052375), Vector3(0.4474731, 0.83639616, -0.5052375), Vector3(0.4474731, 0.8392758, -0.5052375), Vector3(0.4474731, 0.8394216, -0.5052375), Vector3(0.4474731, 0.8346941, -0.5052375)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cig:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.25, 1.47, 1.97, 2.72, 3.51, 4.17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.23609418), Vector3(0, 0, -0.01926668), Vector3(0, 0, -0.09856392), Vector3(0, 0, 0.0057027116), Vector3(0, 0, -0.15649703), Vector3(0, 0, -0.12108198), Vector3(0, 0, -0.094035625), Vector3(0, 0, -0.048464946)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cegan"]
+_data = {
+&"RESET": SubResource("Animation_yaehf"),
+&"cig": SubResource("Animation_074og")
+}
+
+[node name="Node3D" type="Node3D" unique_id=533145551]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="ashtray" parent="." unique_id=1447085540 instance=ExtResource("1_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33429572, 0.7673654, -0.5702713)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=395543763]
+environment = SubResource("Environment_pojl6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1540181913]
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, 0.1, 0, -0.1, -4.371139e-09, 0, 2.2, 0.1)
+visible = false
+light_color = Color(0.93484247, 0.7649968, 0.6069299, 1)
+light_energy = 3.588
+shadow_enabled = true
+spot_range = 27.303
+spot_angle = 40.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1147674193]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.8475643, 2.51869)
+visible = false
+light_color = Color(0.9365842, 0.957725, 0.7923328, 1)
+light_energy = 0.772
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=572519810]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1990535578]
+shape = SubResource("BoxShape3D_1osx4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=727791745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0345006, -0.0023652555, -0.9943172)
+mesh = SubResource("BoxMesh_8w6t5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=632361345]
+transform = Transform3D(0.1, 0, 0, 0, 0.07071068, 0.07071068, 0, -0.07071068, 0.07071068, 0, 1.27, 0.656)
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1981228149]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_8w6t5")
+
+[node name="Sketchfab_Scene" parent="." unique_id=2116345894 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.9992099, 0, -0.045705955, 0, 1, 0, 0.039744314, 0, -1.1490914, -0.30154678, -1.101, 0.004)
+visible = false
+
+[node name="Node3D" type="Node3D" parent="." unique_id=253176573]
+
+[node name="table" type="StaticBody3D" parent="Node3D" unique_id=534984901]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/table" unique_id=1256129781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04121095, 0.8, 0)
+shape = SubResource("BoxShape3D_pojl6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/table" unique_id=1503238996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04624945, 0.8, 0)
+mesh = SubResource("BoxMesh_1osx4")
+
+[node name="PokerTable" type="Node3D" parent="Node3D" unique_id=1547064772 node_paths=PackedStringArray("camera")]
+script = ExtResource("2_lquwl")
+camera = NodePath("../../Camera3D")
+
+[node name="Game" type="Node" parent="Node3D" unique_id=1819993974 node_paths=PackedStringArray("table", "title_screen", "score_sheet")]
+script = ExtResource("5_lquwl")
+table = NodePath("../PokerTable")
+title_screen = NodePath("../../TitleScreen")
+score_sheet = NodePath("../../ScoreSheet")
+
+[node name="lamp" parent="." unique_id=1715966971 instance=ExtResource("5_7mycd")]
+transform = Transform3D(0.019999998, 0, 0, 0, -8.7422775e-10, 0.019999998, 0, -0.019999998, -8.7422775e-10, 0.9648511, 2.2531338, -0.5590054)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1590454929]
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, 0.1, 0, -0.1, -4.371139e-09, 0.008, 1.43, 0.048)
+light_color = Color(0.94717985, 0.7690481, 0.5372161, 1)
+light_energy = 8.328
+spot_range = 15.86
+spot_angle = 66.12
+script = ExtResource("6_7mycd")
+
+[node name="TitleScreen" type="Node" parent="." unique_id=2140094446 node_paths=PackedStringArray("player_camera")]
+script = ExtResource("7_272bh")
+player_camera = NodePath("../Camera3D")
+
+[node name="best_poker_table" parent="." unique_id=1328588727 instance=ExtResource("9_kek77")]
+transform = Transform3D(0.011299247, 0, 0.60051614, 0, 0.4875237, 0, -0.800992, 0, 0.008471223, -0.28677803, -0.59348714, -0.027046775)
+visible = false
+
+[node name="pokerchips2" parent="." unique_id=186845523 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-0.0053730314, 0, 0.025438761, 0, 0.052, 0, -0.025438761, 0, -0.0053730314, 0.23528051, 0.80226755, 0.48067737)
+
+[node name="popkercipsa3" parent="." unique_id=678544431 instance=ExtResource("11_efxa6")]
+transform = Transform3D(0.016596623, 0, -0.022551103, 0, 0.028, 0, 0.022551103, 0, 0.016596623, -0.34297225, 0.80784124, -0.51849884)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1237706735 instance=ExtResource("12_dg77c")]
+transform = Transform3D(0.065000005, 0, 0, 0, 0.065000005, 0, 0, 0, 0.065000005, -0.21942449, 0.80656856, 0.47480687)
+
+[node name="film_grain" parent="." unique_id=641824591 instance=ExtResource("13_ycdy4")]
+
+[node name="tabletable" parent="." unique_id=1215995922 instance=ExtResource("14_w48qg")]
+transform = Transform3D(0.011183665, 0, 0.6009414, 0, 0.488, 0, -0.8009219, 0, 0.00839124, -0.28887606, -0.5897936, -0.026987318)
+
+[node name="cig" parent="." unique_id=1049888480 instance=ExtResource("16_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000001, 0.4474731, 0.83282775, -0.54653066)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=929799457]
+libraries/ = SubResource("AnimationLibrary_cegan")
+autoplay = &"cig"
+
+[node name="ScoreSheet" type="Node3D" parent="." unique_id=1207080743]
+transform = Transform3D(0.4012092, 0, 0.18064113, 0, 0.44000003, 0, -0.18064113, 0, 0.4012092, -0.38277626, 0.82247543, 0.5024555)
+script = ExtResource("17_yaehf")
+paper_size = Vector2(0.36, 0.33)
+paper_color = Color(0.8627761, 0.8180134, 0.7256883, 1)
+font_path = "res://ui/PatrickHand-Regular.ttf"
+font_size = 42
+
+[node name="sound" type="Node" parent="." unique_id=1331438406]
